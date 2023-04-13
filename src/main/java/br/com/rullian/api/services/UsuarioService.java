@@ -10,4 +10,6 @@ public interface UsuarioService {
     Usuario findByID(Integer id);
     List<Usuario> findAll();
     Usuario create(UsuarioDTO obj);
+    Usuario update(UsuarioDTO obj);
+    void delete(Integer id);
 }

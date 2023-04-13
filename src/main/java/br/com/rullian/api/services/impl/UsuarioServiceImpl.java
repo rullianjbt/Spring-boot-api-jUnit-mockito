@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService {
+ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private UsuarioRepository userRepo;
@@ -34,6 +34,17 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario create(UsuarioDTO obj) {
         return userRepo.save(mapper.map(obj, Usuario.class));
+    }
+
+    @Override
+    public Usuario update(UsuarioDTO obj) {
+        return userRepo.save(mapper.map(obj, Usuario.class));
+    }
+
+    @Override
+    public void delete(Integer id) {
+        findByID(id);
+        userRepo.deleteById(id);
     }
 
 
